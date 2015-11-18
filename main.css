@@ -1,0 +1,75 @@
+p {
+	font-family: 'Open Sans';
+	color: white;
+	font-size: 15px;
+}
+
+h3 {
+	font-family: 'Montserrat';
+	font-size: 18px;
+	font-weight: normal;
+	color: white;
+}
+
+html {
+	background-color: #0293C0;
+}
+
+.topSpacing {
+	margin-top: 175px;
+}
+
+.logo {
+	height: 8%;
+	width: 8%;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+}
+
+a {
+	font-family: 'Open Sans';
+	color: white;
+	font-size: 15px;
+}
+
+.circle {
+	display: inline-block;
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	font-size: 15px;
+	color: #0293C0;
+	line-height: 125px;
+	text-align: center;
+	background: white;
+}
+
+.first {
+	margin-right: 75px;
+}
+
+.second {
+	margin-left: 75px;
+}
+
+.circle > a {
+	color: #0293C0;
+	font-family: 'Montserrat';
+	text-decoration: none;
+}
+
+.circle > a:hover {
+	text-decoration: underline;
+}
+
+.centeredContainer {
+	padding-top: 50px;
+    width: 50%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+
