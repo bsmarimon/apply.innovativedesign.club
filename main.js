@@ -19,6 +19,7 @@ $( document ).ready(function() {
     var page = document.getElementsByTagName("html")[0];
     var text1 = document.getElementsByClassName("circle")[0];
     var text2 = document.getElementsByClassName("circle")[1];
+    var text3 = document.getElementsByClassName("circle")[2];
 
     var pink = Math.random();
     
@@ -26,10 +27,12 @@ $( document ).ready(function() {
     	page.style.backgroundColor = "#D43E7D";
     	text1.style.color = "#D43E7D";
     	text2.style.color = "#D43E7D";
+    	text3.style.color = "#D43E7D";
     } 
     if (pink > 0.7 && pink < 1) {
     	page.style.backgroundColor = "#2D3236";
     	text1.style.color = "#2D3236";
     	text2.style.color = "#2D3236";
+    	text3.style.color = "#2D3236";
     }
 });
