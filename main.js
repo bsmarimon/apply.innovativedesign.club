@@ -1,38 +1,36 @@
-
-var hexDigits = new Array
-        ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"); 
-
-//Function to convert hex format to a rgb color
-function rgb2hex(rgb) {
- rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
- return hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-}
-
-function hex(x) {
-  return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
- }
-
 $( document ).ready(function() {
 
-    console.log(1738);
+    // credit for the secret message JavaScript to CS161 course
+    // http://www-inst.eecs.berkeley.edu/~cs161/sp16/
 
-    var page = document.getElementsByTagName("html")[0];
-    var text1 = document.getElementsByClassName("circle")[0];
-    var text2 = document.getElementsByClassName("circle")[1];
-    var text3 = document.getElementsByClassName("circle")[2];
+    var e;
 
-    var pink = Math.random();
-    
-    if (pink < 0.4 && pink < 0.7) {
-    	page.style.backgroundColor = "#D43E7D";
-    	text1.style.color = "#D43E7D";
-    	text2.style.color = "#D43E7D";
-    	text3.style.color = "#D43E7D";
-    } 
-    if (pink > 0.7 && pink < 1) {
-    	page.style.backgroundColor = "#2D3236";
-    	text1.style.color = "#2D3236";
-    	text2.style.color = "#2D3236";
-    	text3.style.color = "#2D3236";
-    }
+    a = 17;
+    b = 38;
+    c = 71;
+
+    b = (b + a*a) % 26;
+    c = (c + b*b) % 26;
+    a = (a + c*c) % 26;
+    b = (b + a*a) % 26;
+    c = (c + b*b) % 26;
+    a = (a + c*c) % 26;
+    a = String.fromCharCode(65+a);
+    b = String.fromCharCode(65+b);
+    c = String.fromCharCode(65+c);
+    var keys    = [];
+    var d = '38,38,40,40,37,39,37,39,66,65';
+
+    $(document).keydown(
+      function(e) {
+        keys.push( e.keyCode );
+        if ( keys.toString().indexOf( d ) >= 0 ){
+            $('div#secret').fadeIn(200);
+            $('span#secret-password').text(function(i,t) {
+            return t + a + b + c;
+          });
+        keys = [];
+        }
+      }
+    );
 });
